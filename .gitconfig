@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Hasan
+	email = h_ghare@yahoo.com
+[alias]
+	st = status
+	cm = commit
+	cmm = commit -m
+	co = checkout
+	com = checkout master
+	con = checkout -b
+	br = branch
+	bra = branch -a
