@@ -8,7 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -63,7 +63,7 @@ let g:ctrlp_custom_ignore = {
     \}
 
 
-colorscheme colorfulnight
+colorscheme railscasts 
 set cursorline
 highlight   CursorLine    term=NONE    cterm=bold ctermbg=darkgray
 set cursorcolumn
