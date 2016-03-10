@@ -1,19 +1,17 @@
 Clone repo
 ==========
 ```
-$ git clone https://github.com/hasanloo/dotfiles.git ~/.dotfiles
+$ git clone --bare git://github.com/hasanloo/dotfiles.git ~/dotfiles.git
+#setup bash alias
+alias .G="git --git-dir=$HOME/dotfiles.git --work-tree=$HOME/"
 ```
 
 
-Setup vim settings
+Setup settings
 =================
 ```
-$ ln -s ~/.dotfiles/.vim ~/.vim
-$ echo "source ~/.dotfiles/.vimrc" >> ~/.vimrc
-```
-
-Bashrc settings
-===============
-```
-$ echo "source ~/.dotfiles/.bashrc" >> ~/.bashrc
+.G status -s -uno
+.G checkout -b original_files
+.G commit -a  -m 'original files'
+.G checkout master
 ```
