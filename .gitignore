@@ -1,0 +1,12 @@
+# ignore all by default
+/*
+
+# do not ignore:
+!bin/
+!.bash/
+!.vim/
+!.ruby/
+!.config/fish
+!.ssh/conf
+!.gitignore
+!.gitconfig
