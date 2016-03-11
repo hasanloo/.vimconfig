@@ -3,7 +3,8 @@
 
 # do not ignore:
 !bin/
-!.vim/
+!.vim/colors/
+!.vim/ftplugin/
 !.ruby/
 !.config/fish/
 !.ssh/conf
