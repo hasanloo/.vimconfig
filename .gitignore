@@ -3,7 +3,6 @@
 
 # do not ignore:
 !bin/
-!.bash/
 !.vim/
 !.ruby/
 !.config/fish
