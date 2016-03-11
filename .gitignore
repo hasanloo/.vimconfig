@@ -5,7 +5,7 @@
 !bin/
 !.vim/
 !.ruby/
-!.config/fish
+!.config/fish/
 !.ssh/conf
 !.gitignore
 !.gitconfig
