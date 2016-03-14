@@ -23,7 +23,7 @@ Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'ggreer/the_silver_searcher'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype on
@@ -48,6 +48,9 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set number
 set scrolloff=5
 set backspace=indent,eol,start
+
+set runtimepath^=~/.vim/bundle/ag
+let g:ag_working_path_mode="r"
 
 "Restore cursor to file position in previous editing session
 ""http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
