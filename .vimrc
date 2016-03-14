@@ -22,6 +22,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'ggreer/the_silver_searcher'
 
 call vundle#end()
 filetype on
