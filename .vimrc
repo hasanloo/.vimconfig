@@ -24,6 +24,8 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rking/ag.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
 
 call vundle#end()
 filetype on
@@ -60,7 +62,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 
 
 map <Leader>t :CtrlPBuffer<CR>
-let g:ctrlp_map = '<C-t>'
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v\c(node_modules|_build|priv|deps|vendor|\.git|\.svn)$',
@@ -68,7 +70,7 @@ let g:ctrlp_custom_ignore = {
     \}
 
 
-colorscheme railscasts 
+colorscheme railscasts
 set cursorline
 highlight   CursorLine    term=NONE    cterm=bold ctermbg=darkgray
 set cursorcolumn
@@ -113,3 +115,7 @@ func! GitGrep(...)
     let &grepprg = save
 endfun
 command! -nargs=? G call GitGrep(<f-args>)
+
+"Save and reestore session automatically"
+:let g:session_autosave = 'yes'
+:let g:session_autoload = 'yes'
