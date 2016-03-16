@@ -1,14 +1,17 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
-	name = Hasan
-	email = h_ghare@yahoo.com
+	email = hasan@sam-media.com
+	name = Hasan Gharehhasan Loo
+
 [alias]
-	st = status
-	cm = commit
-	cmm = commit -m
 	co = checkout
 	com = checkout master
-	con = checkout -b
+	cm = commit
+	cmm = commit -m
+	st = status
 	br = branch
 	bra = branch -a
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[merge]
+	tool = /home/administrator/diff.p
