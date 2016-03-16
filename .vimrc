@@ -24,8 +24,6 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rking/ag.vim'
-" Plugin 'xolox/vim-misc'
-" Plugin 'xolox/vim-session'
 
 call vundle#end()
 filetype on
@@ -70,8 +68,7 @@ let g:ctrlp_custom_ignore = {
     \}
 
 
-" colorscheme railscasts
-colorscheme jellybeans
+colorscheme railscasts
 set cursorline
 highlight   CursorLine    term=NONE    cterm=bold ctermbg=darkgray
 set cursorcolumn
