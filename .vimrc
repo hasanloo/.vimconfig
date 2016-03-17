@@ -9,6 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -68,7 +69,7 @@ let g:ctrlp_custom_ignore = {
     \}
 
 
-colorscheme railscasts
+colorscheme jellybeans
 set cursorline
 highlight   CursorLine    term=NONE    cterm=bold ctermbg=darkgray
 set cursorcolumn
@@ -114,9 +115,7 @@ func! GitGrep(...)
 endfun
 command! -nargs=? G call GitGrep(<f-args>)
 
-"Save and reestore session automatically"
-":let g:session_autosave = 'yes'
-":let g:session_autoload = 'yes'
+autocmd StdinReadPre * let s:std_in=1
 
 " save and restore session for each project
 fu! SaveSess()
@@ -124,18 +123,23 @@ fu! SaveSess()
 endfunction
 
 fu! RestoreSess()
-if filereadable(getcwd() . '/.session.vim')
-    execute 'so ' . getcwd() . '/.session.vim'
-    if bufexists(1)
-        for l in range(1, bufnr('$'))
-            if bufwinnr(l) == -1
-                exec 'sbuffer ' . l
-            endif
-        endfor
+    if filereadable(getcwd() . '/.session.vim')
+        execute 'so ' . getcwd() . '/.session.vim'
+        if bufexists(1)
+            for l in range(1, bufnr('$'))
+                if bufwinnr(l) == -1
+                    exec 'sbuffer ' . l
+                endif
+            endfor
+        endif
     endif
-endif
 syntax on
 endfunction
 
-autocmd VimLeave * call SaveSess()
-autocmd VimEnter * call RestoreSess()
+autocmd VimLeave * if argc() == 0 && !exists("s:std_in") | call SaveSess() | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call RestoreSess() | endif
+
+" NerdTree configs
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map nn :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

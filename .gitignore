@@ -3,10 +3,10 @@
 
 # do not ignore:
 !bin/
-!.vim/colors/
-!.vim/ftplugin/
-!.ruby/
-!.config/fish/
+!.vim/colors/*
+!.vim/ftplugin/*
+!.ruby/*
+!.config/fish/*
 !.ssh/conf
 !.gitignore
 !.gitconfig
