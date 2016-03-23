@@ -143,3 +143,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call RestoreSess() | 
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map nn :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" map moving lines
+" Bubble single lines
+nmap <S-K> ddkP
+nmap <S-J> ddp
+" Bubble multiple lines
+vmap <S-K> xkP`[V`]
+vmap <S-J> xp`[V`]
