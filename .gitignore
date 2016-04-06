@@ -9,4 +9,5 @@
 !.config/fish/*
 !.ssh/conf
 !.gitignore
+!.gitignore_global
 !.gitconfig

@@ -22,9 +22,17 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'avakhov/vim-yaml'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rking/ag.vim'
+Plugin 'wkentaro/conque.vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype on
@@ -68,8 +76,9 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\c\.(swf|bak|png|gif|mov|ico|jpg|pdf|jrxml)$',
     \}
 
+set background=dark
+colorscheme gruvbox
 
-colorscheme jellybeans
 set cursorline
 highlight   CursorLine    term=NONE    cterm=bold ctermbg=darkgray
 set cursorcolumn
@@ -151,3 +160,16 @@ nmap <S-J> ddp
 " Bubble multiple lines
 vmap <S-K> xkP`[V`]
 vmap <S-J> xp`[V`]
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+map <Leader>e :e ~/.vimrc<CR>
+map <Leader>r :source ~/.vimrc<CR>
