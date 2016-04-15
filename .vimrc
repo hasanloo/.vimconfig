@@ -1,5 +1,7 @@
 set nocompatible              " be iMproved, required
+syntax on
 filetype off                  " required
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -26,9 +28,9 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rking/ag.vim'
-Plugin 'wkentaro/conque.vim'
+" Plugin 'wkentaro/conque.vim'
 Plugin 'StanAngeloff/php.vim'
-Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'altercation/vim-colors-solarized'
@@ -142,6 +144,7 @@ fu! RestoreSess()
             endfor
         endif
     endif
+endif
 syntax on
 endfunction
 
@@ -149,8 +152,8 @@ autocmd VimLeave * if argc() == 0 && !exists("s:std_in") | call SaveSess() | end
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call RestoreSess() | endif
 
 " NerdTree configs
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map nn :NERDTreeToggle<CR>
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map nm :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " map moving lines
@@ -160,6 +163,8 @@ nmap <S-J> ddp
 " Bubble multiple lines
 vmap <S-K> xkP`[V`]
 vmap <S-J> xp`[V`]
+
+nmap <Leader><Tab> gt
 
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
@@ -173,3 +178,5 @@ augroup END
 
 map <Leader>e :e ~/.vimrc<CR>
 map <Leader>r :source ~/.vimrc<CR>
+
+set clipboard=unnamedplus
