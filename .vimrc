@@ -28,12 +28,9 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'rking/ag.vim'
-" Plugin 'wkentaro/conque.vim'
 Plugin 'StanAngeloff/php.vim'
-" Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()
@@ -45,7 +42,6 @@ syntax on
 
 set laststatus=2
 
-set nocompatible
 se nostartofline
 set autoindent
 set incsearch
@@ -144,7 +140,6 @@ fu! RestoreSess()
             endfor
         endif
     endif
-endif
 syntax on
 endfunction
 
@@ -154,12 +149,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call RestoreSess() | 
 " NerdTree configs
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map nm :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" map moving lines
-" Bubble single lines
-nmap <S-K> ddkP
-nmap <S-J> ddp
 " Bubble multiple lines
 vmap <S-K> xkP`[V`]
 vmap <S-J> xp`[V`]
@@ -180,3 +171,6 @@ map <Leader>e :e ~/.vimrc<CR>
 map <Leader>r :source ~/.vimrc<CR>
 
 set clipboard=unnamedplus
+
+:command! -nargs=0 NewTerminal tabnew | terminal
+map <Leader>t :NewTerminal<CR>
