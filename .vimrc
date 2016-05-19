@@ -98,7 +98,7 @@ nmap <C-l> :nohlsearch<CR>
 imap jj <Esc>
 map <C-s> :w<Esc>
 "Kill the opened buffer
-nmap <C-k> :bd<CR>
+nmap <C-k> :bp\|:bd #<CR>
 
 "Toggle spell checker
 nnoremap <leader>s :set spell!<CR>
@@ -149,6 +149,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call RestoreSess() | 
 " NerdTree configs
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map nm :NERDTreeToggle<CR>
+map nr :NERDTreeFind<cr>
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Bubble multiple lines
@@ -172,5 +173,9 @@ map <Leader>r :source ~/.vimrc<CR>
 
 set clipboard=unnamedplus
 
+" New terminal command and mapping
 :command! -nargs=0 NewTerminal tabnew | terminal
-map <Leader>t :NewTerminal<CR>
+map <Leader>w :NewTerminal<CR>
+
+" exit terminal mode by ESC
+:tnoremap <Esc> <C-\><C-n>
