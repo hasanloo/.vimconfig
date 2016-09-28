@@ -179,3 +179,9 @@ map <Leader>w :NewTerminal<CR>
 
 " exit terminal mode by ESC
 :tnoremap <Esc> <C-\><C-n>
+
+
+set splitbelow
+
+:nmap cp :let @" = expand("%")
+ noremap <Leader>f :let @+=expand("%:p")<CR>

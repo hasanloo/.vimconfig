@@ -14,7 +14,10 @@
 	type = cat-file -t
 	dump = cat-file -p
 	pushme = git push -u origin HEAD
-[merge]
-	tool = /home/hasan/diff.py
 [core]
 	excludesfile = /home/hasan/.gitignore_global
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
