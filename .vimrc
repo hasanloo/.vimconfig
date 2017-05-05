@@ -177,9 +177,6 @@ set clipboard=unnamedplus
 :command! -nargs=0 NewTerminal tabnew | terminal
 map <Leader>w :NewTerminal<CR>
 
-" exit terminal mode by ESC
-:tnoremap <Esc> <C-\><C-n>
-
 
 set splitbelow
 

@@ -13,7 +13,8 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t
 	dump = cat-file -p
-	pushme = git push -u origin HEAD
+	pushme = push -u origin HEAD
+	rpull = pull --rebase --prune --verbose --no-ff --no-commit --no-stat
 [core]
 	excludesfile = /home/hasan/.gitignore_global
 [merge]
