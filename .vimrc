@@ -32,6 +32,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'morhetz/gruvbox'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 filetype on
@@ -171,14 +172,16 @@ augroup END
 map <Leader>e :e ~/.vimrc<CR>
 map <Leader>r :source ~/.vimrc<CR>
 
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
+set clipboard=unnamed
+
 
 " New terminal command and mapping
 :command! -nargs=0 NewTerminal tabnew | terminal
 map <Leader>w :NewTerminal<CR>
 
 " exit terminal mode by ESC
-:tnoremap <Esc> <C-\><C-n>
+" :tnoremap <Esc> <C-\><C-n>
 
 
 set splitbelow
