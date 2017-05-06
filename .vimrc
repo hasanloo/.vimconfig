@@ -172,17 +172,12 @@ augroup END
 map <Leader>e :e ~/.vimrc<CR>
 map <Leader>r :source ~/.vimrc<CR>
 
-" set clipboard=unnamedplus
 set clipboard=unnamed
 
 
 " New terminal command and mapping
 :command! -nargs=0 NewTerminal tabnew | terminal
 map <Leader>w :NewTerminal<CR>
-
-" exit terminal mode by ESC
-" :tnoremap <Esc> <C-\><C-n>
-
 
 set splitbelow
 
