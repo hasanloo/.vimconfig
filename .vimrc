@@ -33,6 +33,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'morhetz/gruvbox'
 Plugin 'mileszs/ack.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype on
